@@ -700,49 +700,24 @@
     "interactiveEditorInput.placeholderForeground": "#D0D0D0B0"
   },
   "tokenColors": [
+    // -------------------------------------------------------------------------
+    // 1. Comments (Dark Grey: #60706F)
+    // -------------------------------------------------------------------------
     {
       "scope": [
         "comment",
-        "punctuation.definition.comment"
+        "punctuation.definition.comment",
+        "markup.quote"
       ],
       "settings": {
-        "foreground": "#60706F"
+        "foreground": "#60706F",
+        "fontStyle": "italic"
       }
     },
-    {
-      "scope": [
-        "storage.type"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
-    {
-      "scope": [
-        "keyword.control.class",
-        "keyword.control.def",
-        "keyword.control.function",
-        "keyword",
-        "keyword.control"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
-    {
-      "scope": [
-        "meta.function.call",
-        "entity.name.function",
-        "support.function",
-        "entity.name.method",
-        "variable.function"
-      ],
-      "settings": {
-        //"foreground": "#D0D0D0"
-        // "foreground": "#A7AAA0"
-        "foreground" : "#7A9C9B"
-      }
-    },
+
+    // -------------------------------------------------------------------------
+    // 2. Strings (Light Green: #99CC99)
+    // -------------------------------------------------------------------------
     {
       "scope": [
         "string",
@@ -754,18 +729,82 @@
         "foreground": "#99CC99"
       }
     },
+
+    // -------------------------------------------------------------------------
+    // 3. Keywords, Control Flow, and Storage (Red: #DB5252)
+    // * Ensures for, if, else, class, new, delete are Red.
+    // -------------------------------------------------------------------------
     {
+      "scope": [
+        "keyword",
+        "keyword.control",
+        "keyword.control.class",
+        "keyword.control.def",
+        "keyword.control.function",
+        "storage.type",               // Includes C/C++ storage classes and definitions: class, struct, union, enum
+        "storage.modifier",         // <--- ADDED: Catches static, const, extern, etc.
+        "storage.type.modifier",    // <--- ADDED: Catching specialized modifiers like const in C++
+        "keyword.other.debugger",
+        "invalid",
+        "invalid.deprecated",
+        "markup.deleted"
+      ],
+      "settings": {
+        "foreground": "#DB5252"
+      }
+    },
+    // -------------------------------------------------------------------------
+    // 5. Functions, Punctuation, and Operators (Green-Blue: #7A9C9B)
+    // -------------------------------------------------------------------------
+    {
+      "scope": [
+       // Type Scopes
+        // "entity.name.type",
+        // "support.type",
+        // "support.class",
+        // "entity.name.namespace",
+        // Function/Method Scopes (C++ & Python)
+        "entity.name.function",
+        "support.function",
+        "entity.name.method",
+        "variable.function",
+        "meta.function.call",
+        "entity.name.function.member",  
+        // Method Call Property Scopes (Method names after the dot)
+        "meta.property.object",
+        "variable.other.property",
+        "entity.name.property",
+        // "variable.name.function",     // Added
+        // "meta.object-literal.key",    // Added (Can sometimes catch method names)
+        // Punctuation and Operators
+        "punctuation",
+        "meta.brace",
+        "meta.delimiter",
+        "operator",
+        "keyword.operator",
+        // Markup
+        "markup.inserted",
+        "markup.changed"
+      ],
+      "settings": {
+        "foreground": "#7A9C9B"
+      }
+    },
+
+    // -------------------------------------------------------------------------
+    // 6. Variables and Default Foreground (White: #D0D0D0)
+    // * This is the catch-all for elements not covered above.
+    // -------------------------------------------------------------------------
+    {
+      // NOTE: Type-related scopes (entity.name.type, support.class, support.type)
+      // have been REMOVED from this block to ensure rule 4 works.
       "scope": [
         "variable",
         "entity.name.variable",
         "support.variable",
         "meta.definition.variable",
         "meta.module-reference",
-        "entity.name.type",
-        "support.class",
-        "support.type",
         "entity.other.type.php",
-        "entity.name.type.namespace",
         "entity.name.scope-resolution",
         "support.constant.property",
         "variable.other.property",
@@ -788,34 +827,17 @@
         "constant.other.color",
         "variable.language.this",
         "variable.language.super",
-        "operator",
-        "keyword.operator"
+        "entity.name.tag.yaml",
+        "entity.name.section.yaml"
       ],
       "settings": {
         "foreground": "#D0D0D0"
       }
     },
-    {
-      "scope": [
-        "punctuation",
-        "meta.brace",
-        "meta.delimiter",
-        "operator",
-        "keyword.operator"
-      ],
-      "settings": {
-        "foreground": "#7A9C9B"
-      }
-    },
-    {
-      "scope": [
-        "invalid",
-        "invalid.deprecated"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
+
+    // -------------------------------------------------------------------------
+    // 7. Markup (File Diff/Link Highlighting)
+    // -------------------------------------------------------------------------
     {
       "scope": [
         "markup.inserted",
@@ -841,32 +863,6 @@
       "settings": {
         "foreground": "#D0D0D0",
         "fontStyle": "underline"
-      }
-    },
-    {
-      "scope": [
-        "entity.name.tag.yaml",
-        "entity.name.section.yaml"
-      ],
-      "settings": {
-        "foreground": "#D0D0D0"
-      }
-    },
-    {
-      "scope": [
-        "keyword.other.debugger"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
-    {
-      "scope": [
-        "markup.quote"
-      ],
-      "settings": {
-        "foreground": "#60706F",
-        "fontStyle": "italic"
       }
     }
   ]

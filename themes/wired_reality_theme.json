@@ -513,14 +513,16 @@
     //
     "terminal.background": "#181D20",
     "terminal.foreground": "#D0D0D0",
-    "terminal.ansiBlack": "#181D20",
-    "terminal.ansiRed": "#DB5252",
-    "terminal.ansiGreen": "#7A9C9B",
-    "terminal.ansiYellow": "#A7AAA0",
-    "terminal.ansiBlue": "#7A9C9B",
-    "terminal.ansiMagenta": "#DB5252",
-    "terminal.ansiCyan": "#A7AAA0",
-    "terminal.ansiWhite": "#A7AAA0",
+    // normal ANSI colors 
+    "terminal.ansiBlack": "#1D2021",
+    "terminal.ansiRed": "#DB5252",        
+    "terminal.ansiGreen": "#718C6A",
+    "terminal.ansiYellow": "#CC7722",
+    "terminal.ansiBlue": "#5F8CA8",       
+    "terminal.ansiMagenta": "#A174A1",    
+    "terminal.ansiCyan": "#6CA9A7",       
+    "terminal.ansiWhite": "#D0D0D0",      
+    // bright colors 
     "terminal.ansiBrightBlack": "#3A4045",
     "terminal.ansiBrightRed": "#FF6B6B",
     "terminal.ansiBrightGreen": "#B2F090",
@@ -529,6 +531,7 @@
     "terminal.ansiBrightMagenta": "#FF99CC",
     "terminal.ansiBrightCyan": "#B3E0E0",
     "terminal.ansiBrightWhite": "#FFFFFF",
+    // others 
     "terminal.selectionBackground": "#284D2880",
     "terminalCursor.background": "#DB5252",
     "terminalCursor.foreground": "#DB5252",

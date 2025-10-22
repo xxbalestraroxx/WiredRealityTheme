@@ -1,27 +1,27 @@
 {
-    "name": "wired-reality-theme",
-    "displayName": "Wired Reality",
-    "description": "Theme inspired by the vision of future of 1980s and 1990s",
-    "version": "0.0.1",
-    "publisher": "xXBalestraroXx",
-    "icon": "imgs/icon.png",
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/xxbalestraroxx/WiredRealityTheme"
-    },
-    "engines": {
-      "vscode": "^1.20.0"
-    },
-    "categories": [
-      "Themes" 
-    ],
-    "contributes": {
-      "themes": [
-        {
-          "label": "Wired Reality",
-          "uiTheme": "vs-dark",
-          "path": "./themes/wired_reality_theme.json"
-        }
-      ]
-    } 
-  }
+  "name": "wired-reality-theme",
+  "displayName": "Wired Reality",
+  "description": "Theme inspired by the vision of future of 1980s and 1990s",
+  "version": "0.0.1",
+  "publisher": "xXBalestraroXx",
+  "icon": "imgs/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xxbalestraroxx/WiredRealityTheme"
+  },
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Themes" 
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Wired Reality",
+        "uiTheme": "vs-dark",
+        "path": "./themes/wired_reality_theme.json"
+      }
+    ]
+  } 
+}

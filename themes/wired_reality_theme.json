@@ -614,14 +614,14 @@
     //
     // Status Bar (bottom bar) Colors
     //
-    "statusBar.background": "#6A8C8A",
-    "statusBar.foreground": "#FFFFFF",
+    "statusBar.background": "#181D20",           // Main theme background color
+    "statusBar.foreground": "#D0D0D0",           // Light gray/white text
     "statusBar.debuggingBackground": "#DB5252",
     "statusBar.debuggingForeground": "#FFFFFF",
-    "statusBar.noFolderBackground": "#6A8C8A",
+    "statusBar.noFolderBackground": "#181D20",
     "statusBar.noFolderForeground": "#D0D0D0",
-    "statusBarItem.activeBackground": "#5A7C7A",
-    "statusBarItem.hoverBackground": "#5A7C7A",
+    "statusBarItem.activeBackground": "#7A9C9B80",
+    "statusBarItem.hoverBackground": "#7A9C9B60",
     "statusBarItem.prominentBackground": "#A7AAA0",
     "statusBarItem.prominentHoverBackground": "#A7AAA0B0",
     "statusBarItem.errorBackground": "#DB5252",
@@ -631,6 +631,7 @@
     "statusBarItem.warningForeground": "#FFFFFF",
     "statusBarItem.warningHoverBackground": "#CC7722",
     "statusBar.border": "#181D20",
+    // "statusBar.border": "#7A9C9B",               // Added teal border/highlight
     "statusBarItem.remoteBackground": "#DB5252",
     "statusBarItem.remoteForeground": "#FFFFFF",
     "statusBarItem.remoteHoverBackground": "#DB5252",

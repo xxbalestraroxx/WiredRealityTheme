@@ -1,7 +1,7 @@
 {
-  "name": "wired-reality-theme",
-  "displayName": "Wired Reality",
-  "description": "Theme inspired by the vision of future of 1980s and 1990s",
+  "name": "retro-cathode-ray-minimal-theme",
+  "displayName": "Retro Cathode-Ray Minimal Theme",
+  "description": "Retro theme inspired by old CRT mointors while being minimal and focusin of usability",
   "version": "0.0.1",
   "publisher": "xXBalestraroXx",
   "icon": "imgs/icon.png",
@@ -18,9 +18,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "Wired Reality",
+        "label": "Retro Cathode-Ray Minimal Theme",
         "uiTheme": "vs-dark",
-        "path": "./themes/wired_reality_theme.json"
+        "path": "./themes/cathode_ray_theme.json"
       }
     ]
   } 

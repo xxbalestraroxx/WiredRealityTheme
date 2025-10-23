@@ -1,5 +1,5 @@
 {
-  "name": "Wired Reality",
+  "name": "Retro Cathode-Ray Minimal Theme",
   "type": "dark",
   "colors": {
     //
@@ -614,12 +614,13 @@
     //
     // Status Bar (bottom bar) Colors
     //
-    "statusBar.background": "#181D20",           // Main theme background color
-    "statusBar.foreground": "#D0D0D0",           // Light gray/white text
-    "statusBar.debuggingBackground": "#DB5252",
+    // "statusBar.background": "#181D20",           // Main theme background color
+    "statusBar.background": "#7A9C9B",           // Set to solid Teal (Light Background)
+    "statusBar.foreground": "#FFFFFF",           // Set to Darkest Theme Background (Dark Text)
+    "statusBar.debuggingBackground": "#DB5252",  // Retained original debugging color
     "statusBar.debuggingForeground": "#FFFFFF",
-    "statusBar.noFolderBackground": "#181D20",
-    "statusBar.noFolderForeground": "#D0D0D0",
+    "statusBar.noFolderBackground": "#7A9C9B",   // Cohesive: Same light background when no folder is open
+    "statusBar.noFolderForeground": "#FFFFFF",   // Cohesive: Same dark foreground text
     "statusBarItem.activeBackground": "#7A9C9B80",
     "statusBarItem.hoverBackground": "#7A9C9B60",
     "statusBarItem.prominentBackground": "#A7AAA0",
@@ -630,12 +631,12 @@
     "statusBarItem.warningBackground": "#CC7722",
     "statusBarItem.warningForeground": "#FFFFFF",
     "statusBarItem.warningHoverBackground": "#CC7722",
-    "statusBar.border": "#181D20",
-    // "statusBar.border": "#7A9C9B",               // Added teal border/highlight
+    "statusBar.border": "#181D20",               // Cohesive: Border set to the same background color
     "statusBarItem.remoteBackground": "#DB5252",
     "statusBarItem.remoteForeground": "#FFFFFF",
     "statusBarItem.remoteHoverBackground": "#DB5252",
-    "statusBarItem.remoteHoverForeground": "#FFFFFF",
+    "statusBarItem.remoteHoverForeground": "#FFFFFF", 
+
 
     //
     // Panel (Terminal, Output, Debug Console, Problems) Colors
@@ -711,8 +712,8 @@
         "markup.quote"
       ],
       "settings": {
-        "foreground": "#60706F",
-        "fontStyle": "italic"
+        "foreground": "#60706F" 
+        // "fontStyle": "italic"
       }
     },
 

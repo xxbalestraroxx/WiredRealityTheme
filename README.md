@@ -1,8 +1,8 @@
-# Wired Reality
+# Retro Cathode-Ray Minimal Theme
 
 ## Description
 
-A dark VS Code theme designed to transport you back to the romantacized vision of the future aesthetic of the 1980s and 1990s.  
+A dark VS Code theme designed to transport you back to the vision of the future aesthetic of the 1980s and 1990s.  
 
 As it turned out technology aesthetic did not progress to become as imagined during that period, but we are still perfectly in time to indulge in that same fantasy. 
 

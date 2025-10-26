@@ -1,5 +1,5 @@
 {
-  "name": "Wired Reality",
+  "name": "Retro Cathode-Ray Minimal Theme",
   "type": "dark",
   "colors": {
     //
@@ -513,14 +513,16 @@
     //
     "terminal.background": "#181D20",
     "terminal.foreground": "#D0D0D0",
-    "terminal.ansiBlack": "#181D20",
-    "terminal.ansiRed": "#DB5252",
-    "terminal.ansiGreen": "#7A9C9B",
-    "terminal.ansiYellow": "#A7AAA0",
-    "terminal.ansiBlue": "#7A9C9B",
-    "terminal.ansiMagenta": "#DB5252",
-    "terminal.ansiCyan": "#A7AAA0",
-    "terminal.ansiWhite": "#A7AAA0",
+    // normal ANSI colors 
+    "terminal.ansiBlack": "#1D2021",
+    "terminal.ansiRed": "#DB5252",        
+    "terminal.ansiGreen": "#718C6A",
+    "terminal.ansiYellow": "#CC7722",
+    "terminal.ansiBlue": "#5F8CA8",       
+    "terminal.ansiMagenta": "#A174A1",    
+    "terminal.ansiCyan": "#6CA9A7",       
+    "terminal.ansiWhite": "#D0D0D0",      
+    // bright colors 
     "terminal.ansiBrightBlack": "#3A4045",
     "terminal.ansiBrightRed": "#FF6B6B",
     "terminal.ansiBrightGreen": "#B2F090",
@@ -529,6 +531,7 @@
     "terminal.ansiBrightMagenta": "#FF99CC",
     "terminal.ansiBrightCyan": "#B3E0E0",
     "terminal.ansiBrightWhite": "#FFFFFF",
+    // others 
     "terminal.selectionBackground": "#284D2880",
     "terminalCursor.background": "#DB5252",
     "terminalCursor.foreground": "#DB5252",
@@ -611,14 +614,15 @@
     //
     // Status Bar (bottom bar) Colors
     //
-    "statusBar.background": "#6A8C8A",
-    "statusBar.foreground": "#FFFFFF",
-    "statusBar.debuggingBackground": "#DB5252",
+    // "statusBar.background": "#181D20",           // Main theme background color
+    "statusBar.background": "#7A9C9B",           // Set to solid Teal (Light Background)
+    "statusBar.foreground": "#FFFFFF",           // Set to Darkest Theme Background (Dark Text)
+    "statusBar.debuggingBackground": "#DB5252",  // Retained original debugging color
     "statusBar.debuggingForeground": "#FFFFFF",
-    "statusBar.noFolderBackground": "#6A8C8A",
-    "statusBar.noFolderForeground": "#D0D0D0",
-    "statusBarItem.activeBackground": "#5A7C7A",
-    "statusBarItem.hoverBackground": "#5A7C7A",
+    "statusBar.noFolderBackground": "#7A9C9B",   // Cohesive: Same light background when no folder is open
+    "statusBar.noFolderForeground": "#FFFFFF",   // Cohesive: Same dark foreground text
+    "statusBarItem.activeBackground": "#7A9C9B80",
+    "statusBarItem.hoverBackground": "#7A9C9B60",
     "statusBarItem.prominentBackground": "#A7AAA0",
     "statusBarItem.prominentHoverBackground": "#A7AAA0B0",
     "statusBarItem.errorBackground": "#DB5252",
@@ -627,11 +631,12 @@
     "statusBarItem.warningBackground": "#CC7722",
     "statusBarItem.warningForeground": "#FFFFFF",
     "statusBarItem.warningHoverBackground": "#CC7722",
-    "statusBar.border": "#181D20",
+    "statusBar.border": "#181D20",               // Cohesive: Border set to the same background color
     "statusBarItem.remoteBackground": "#DB5252",
     "statusBarItem.remoteForeground": "#FFFFFF",
     "statusBarItem.remoteHoverBackground": "#DB5252",
-    "statusBarItem.remoteHoverForeground": "#FFFFFF",
+    "statusBarItem.remoteHoverForeground": "#FFFFFF", 
+
 
     //
     // Panel (Terminal, Output, Debug Console, Problems) Colors
@@ -697,49 +702,24 @@
     "interactiveEditorInput.placeholderForeground": "#D0D0D0B0"
   },
   "tokenColors": [
+    // -------------------------------------------------------------------------
+    // 1. Comments (Dark Grey: #60706F)
+    // -------------------------------------------------------------------------
     {
       "scope": [
         "comment",
-        "punctuation.definition.comment"
+        "punctuation.definition.comment",
+        "markup.quote"
       ],
       "settings": {
-        "foreground": "#60706F"
+        "foreground": "#60706F" 
+        // "fontStyle": "italic"
       }
     },
-    {
-      "scope": [
-        "storage.type"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
-    {
-      "scope": [
-        "keyword.control.class",
-        "keyword.control.def",
-        "keyword.control.function",
-        "keyword",
-        "keyword.control"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
-    {
-      "scope": [
-        "meta.function.call",
-        "entity.name.function",
-        "support.function",
-        "entity.name.method",
-        "variable.function"
-      ],
-      "settings": {
-        //"foreground": "#D0D0D0"
-        // "foreground": "#A7AAA0"
-        "foreground" : "#7A9C9B"
-      }
-    },
+
+    // -------------------------------------------------------------------------
+    // 2. Strings (Light Green: #99CC99)
+    // -------------------------------------------------------------------------
     {
       "scope": [
         "string",
@@ -751,18 +731,82 @@
         "foreground": "#99CC99"
       }
     },
+
+    // -------------------------------------------------------------------------
+    // 3. Keywords, Control Flow, and Storage (Red: #DB5252)
+    // * Ensures for, if, else, class, new, delete are Red.
+    // -------------------------------------------------------------------------
     {
+      "scope": [
+        "keyword",
+        "keyword.control",
+        "keyword.control.class",
+        "keyword.control.def",
+        "keyword.control.function",
+        "storage.type",               // Includes C/C++ storage classes and definitions: class, struct, union, enum
+        "storage.modifier",         // <--- ADDED: Catches static, const, extern, etc.
+        "storage.type.modifier",    // <--- ADDED: Catching specialized modifiers like const in C++
+        "keyword.other.debugger",
+        "invalid",
+        "invalid.deprecated",
+        "markup.deleted"
+      ],
+      "settings": {
+        "foreground": "#DB5252"
+      }
+    },
+    // -------------------------------------------------------------------------
+    // 5. Functions, Punctuation, and Operators (Green-Blue: #7A9C9B)
+    // -------------------------------------------------------------------------
+    {
+      "scope": [
+       // Type Scopes
+        // "entity.name.type",
+        // "support.type",
+        // "support.class",
+        // "entity.name.namespace",
+        // Function/Method Scopes (C++ & Python)
+        "entity.name.function",
+        "support.function",
+        "entity.name.method",
+        "variable.function",
+        "meta.function.call",
+        "entity.name.function.member",  
+        // Method Call Property Scopes (Method names after the dot)
+        "meta.property.object",
+        "variable.other.property",
+        "entity.name.property",
+        // "variable.name.function",     // Added
+        // "meta.object-literal.key",    // Added (Can sometimes catch method names)
+        // Punctuation and Operators
+        "punctuation",
+        "meta.brace",
+        "meta.delimiter",
+        "operator",
+        "keyword.operator",
+        // Markup
+        "markup.inserted",
+        "markup.changed"
+      ],
+      "settings": {
+        "foreground": "#7A9C9B"
+      }
+    },
+
+    // -------------------------------------------------------------------------
+    // 6. Variables and Default Foreground (White: #D0D0D0)
+    // * This is the catch-all for elements not covered above.
+    // -------------------------------------------------------------------------
+    {
+      // NOTE: Type-related scopes (entity.name.type, support.class, support.type)
+      // have been REMOVED from this block to ensure rule 4 works.
       "scope": [
         "variable",
         "entity.name.variable",
         "support.variable",
         "meta.definition.variable",
         "meta.module-reference",
-        "entity.name.type",
-        "support.class",
-        "support.type",
         "entity.other.type.php",
-        "entity.name.type.namespace",
         "entity.name.scope-resolution",
         "support.constant.property",
         "variable.other.property",
@@ -785,34 +829,17 @@
         "constant.other.color",
         "variable.language.this",
         "variable.language.super",
-        "operator",
-        "keyword.operator"
+        "entity.name.tag.yaml",
+        "entity.name.section.yaml"
       ],
       "settings": {
         "foreground": "#D0D0D0"
       }
     },
-    {
-      "scope": [
-        "punctuation",
-        "meta.brace",
-        "meta.delimiter",
-        "operator",
-        "keyword.operator"
-      ],
-      "settings": {
-        "foreground": "#7A9C9B"
-      }
-    },
-    {
-      "scope": [
-        "invalid",
-        "invalid.deprecated"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
+
+    // -------------------------------------------------------------------------
+    // 7. Markup (File Diff/Link Highlighting)
+    // -------------------------------------------------------------------------
     {
       "scope": [
         "markup.inserted",
@@ -838,32 +865,6 @@
       "settings": {
         "foreground": "#D0D0D0",
         "fontStyle": "underline"
-      }
-    },
-    {
-      "scope": [
-        "entity.name.tag.yaml",
-        "entity.name.section.yaml"
-      ],
-      "settings": {
-        "foreground": "#D0D0D0"
-      }
-    },
-    {
-      "scope": [
-        "keyword.other.debugger"
-      ],
-      "settings": {
-        "foreground": "#DB5252"
-      }
-    },
-    {
-      "scope": [
-        "markup.quote"
-      ],
-      "settings": {
-        "foreground": "#60706F",
-        "fontStyle": "italic"
       }
     }
   ]

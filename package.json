@@ -1,8 +1,8 @@
 {
-  "name": "retro-cathode-ray-minimal-theme",
+  "name": "wired-reality-theme",
   "displayName": "Retro Cathode-Ray Minimal Theme",
-  "description": "Retro theme inspired by old CRT mointors while being minimal and focusin of usability",
-  "version": "0.0.1",
+  "description": "Retro theme inspired by CRT monitors while being minimal and with a focus on usability",
+  "version": "1.0.0",
   "publisher": "xXBalestraroXx",
   "icon": "imgs/icon.png",
   "repository": {
